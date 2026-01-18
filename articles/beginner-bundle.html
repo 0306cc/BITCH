@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新手組合包 - CryptoNest 免費資源</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .resource-section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid var(--accent);
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .resource-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(247, 147, 26, 0.1));
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
+            border-color: var(--accent);
+        }
+
+        .resource-icon {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .resource-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .resource-description {
+            color: var(--text-secondary);
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .download-btn {
+            display: block;
+            margin: 1rem auto 0;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, var(--accent), var(--primary-color));
+            color: var(--dark-bg);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
+        }
+
+        .guide-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .guide-step {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .guide-step:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(247, 147, 26, 0.3);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent));
+            color: var(--dark-bg);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-title {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-description {
+            color: var(--text-secondary);
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(74, 144, 226, 0.1));
+            border: 2px solid var(--accent);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .info-box h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-box li {
+            color: var(--text-secondary);
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .info-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent));
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h2 {
+            color: var(--dark-bg);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            color: var(--dark-bg);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: var(--dark-bg);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(247, 147, 26, 0.3), rgba(0, 212, 255, 0.3));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+        }
+
+        .video-title {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航列 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🪙 CryptoNest</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">首頁</a></li>
+                <li><a href="../index.html#articles">文章</a></li>
+                <li><a href="#about">關於我們</a></li>
+                <li><a href="#contact">聯絡我們</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 文章標題 -->
+    <section class="article-header">
+        <div class="container">
+            <a href="../index.html" class="back-button">← 返回首頁</a>
+            <h1 class="article-title">新手組合包 - 免費學習資源</h1>
+            <div class="article-meta">
+                <span>📅 更新日期：2026年1月19日</span> | 
+                <span>👤 提供者：CryptoNest 團隊</span> | 
+                <span>🎁 完全免費</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文章內容 -->
+    <section class="container">
+        <div class="article-body">
+            <h2>🎁 歡迎領取新手組合包！</h2>
+            <p>
+                為了幫助加密貨幣新手快速入門，CryptoNest 特別準備了豐富的免費學習資源。
+                這些資源涵蓋了從基礎知識到實戰技巧的完整學習路徑，讓你在加密貨幣投資之路上少走彎路。
+            </p>
+
+            <!-- 免費資源 -->
+            <div class="resource-section">
+                <h2 style="text-align: center; color: var(--accent); margin-bottom: 2rem;">📚 公開免費資源</h2>
+                
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">📖</div>
+                        <h3 class="resource-title">加密貨幣與區塊鏈概述</h3>
+                        <p class="resource-description">
+                            從零開始學習加密貨幣基礎知識，包含區塊鏈原理、錢包使用、交易所操作等完整教學
+                        </p>
+                        <a href="bundle-1.html" class="download-btn">閱讀文章 →</a>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-icon">📊</div>
+                        <h3 class="resource-title">交易的本質與邏輯概述</h3>
+                        <p class="resource-description">
+                            理解交易的核心邏輯，建立正確的投資心態與交易思維框架
+                        </p>
+                        <a href="bundle-2.html" class="download-btn">閱讀文章 →</a>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-icon">💰</div>
+                        <h3 class="resource-title">如何入金</h3>
+                        <p class="resource-description">
+                            實操教學：將法幣轉換成加密貨幣，安全完成入金流程，開始你的交易之旅
+                        </p>
+                        <a href="bundle-3.html" class="download-btn">閱讀文章 →</a>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-icon">🔍</div>
+                        <h3 class="resource-title">合約操作教學</h3>
+                        <p class="resource-description">
+                            完整的合約交易教學，從開倉到平倉的詳細步驟，掌握槓桿交易技巧
+                        </p>
+                        <a href="bundle-4.html" class="download-btn">閱讀文章 →</a>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-icon">🎯</div>
+                        <h3 class="resource-title">K棒基礎介紹</h3>
+                        <p class="resource-description">
+                            掌握技術分析的基礎工具，學會閱讀 K 線圖，理解價格走勢
+                        </p>
+                        <a href="trading-2.html" class="download-btn">閱讀文章 →</a>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-icon">📱</div>
+                        <h3 class="resource-title">數據解說 - Blave.org</h3>
+                        <p class="resource-description">
+                            學習如何閱讀和分析加密貨幣市場的重要數據指標，提升交易決策能力
+                        </p>
+                        <a href="trading-1.html" class="download-btn">閱讀文章 →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 學習路徑 -->
+            <h2>🎓 新手學習路徑建議</h2>
+            <p>按照以下步驟循序漸進，建立扎實的加密貨幣知識基礎：</p>
+
+            <div class="guide-section">
+                <div class="guide-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">基礎知識學習</h3>
+                    <p class="step-description">
+                        先閱讀「新手入門指南」，了解區塊鏈基本概念、加密貨幣運作原理
+                    </p>
+                </div>
+
+                <div class="guide-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">實踐操作</h3>
+                    <p class="step-description">
+                        註冊交易所、創建錢包，進行小額交易練習，熟悉操作流程
+                    </p>
+                </div>
+
+                <div class="guide-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">技術分析入門</h3>
+                    <p class="step-description">
+                        學習「技術分析基礎」，掌握圖表分析和交易信號識別技巧
+                    </p>
+                </div>
+
+                <div class="guide-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">風險管理</h3>
+                    <p class="step-description">
+                        深入研讀「風險管理手冊」，建立正確的投資心態和資金管理方法
+                    </p>
+                </div>
+
+                <div class="guide-step">
+                    <div class="step-number">5</div>
+                    <h3 class="step-title">項目研究</h3>
+                    <p class="step-description">
+                        運用「項目分析框架」，學會獨立評估和篩選優質投資標的
+                    </p>
+                </div>
+
+                <div class="guide-step">
+                    <div class="step-number">6</div>
+                    <h3 class="step-title">策略實踐</h3>
+                    <p class="step-description">
+                        參考「交易策略模板」，制定並執行自己的交易計劃
+                    </p>
+                </div>
+            </div>
+
+            <!-- 進階資源 -->
+            <div class="info-box">
+                <h3>💎 想要獲得更多進階資源？</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    加入我們的 A8A9 會員群，解鎖以下專屬內容：
+                </p>
+                <ul>
+                    <li>個人投資筆記專區 - 資深交易員的實戰經驗分享</li>
+                    <li>主流幣 & 山寨幣合約策略 - 即時交易信號與策略分析</li>
+                    <li>推薦現貨佈局 - 專業團隊精選的投資標的</li>
+                    <li>AI 機器人爆量訊號 - 24/7 市場監控與通知</li>
+                    <li>市場敘事數據秘笈 - 深度市場分析與數據解讀</li>
+                    <li>頂級篩幣技術 - 專業的項目評估方法</li>
+                </ul>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-box">
+                <h2>🚀 準備好開始你的加密貨幣之旅了嗎？</h2>
+                <p>
+                    立即開始學習新手組合包系列文章！<br>
+                    或加入 A8A9 會員群，獲得專業指導與即時交易信號
+                </p>
+                <a href="beginner-trading.html" class="cta-btn">了解 A8A9 會員群</a>
+            </div>
+
+            <h2>📞 需要幫助？</h2>
+            <p>
+                如果你在學習過程中遇到任何問題，歡迎在社群中提問。我們的團隊和社群成員都樂意協助你！
+            </p>
+
+            <p style="margin-top: 2rem; padding: 1.5rem; background: rgba(247, 147, 26, 0.1); border-radius: 10px; border-left: 4px solid var(--primary-color);">
+                🌟 <strong>重要提醒：</strong>加密貨幣投資存在風險，請務必在充分了解的基礎上做出投資決策。
+                建議先從小額投資開始，累積經驗後再逐步增加投資規模。
+            </p>
+        </div>
+    </section>
+
+    <!-- 頁腳 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CryptoNest</h3>
+                    <p>您的加密貨幣學習與交流平台</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速連結</h4>
+                    <ul>
+                        <li><a href="../index.html#articles">文章</a></li>
+                        <li><a href="beginner-trading.html">新手交易指南</a></li>
+                        <li><a href="#contact">聯絡我們</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>社群媒體</h4>
+                    <ul>
+                        <li><a href="https://line.me/ti/g2/K870w-_UF2c28CcFeHMLGzsDxNX6m_kCgRy5Fg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">Line</a></li>
+                        <!-- <li><a href="#">Discord</a></li>
+                        <li><a href="#">Telegram</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CryptoNest. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

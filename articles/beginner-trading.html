@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新手交易指南 - CryptoNest A8A9會員群</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .membership-section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid var(--primary-color);
+        }
+
+        .membership-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            background: linear-gradient(135deg, rgba(247, 147, 26, 0.1), rgba(0, 212, 255, 0.1));
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .benefit-number {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-title {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-description {
+            color: var(--text-secondary);
+        }
+
+        .exchange-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .exchange-card {
+            background: linear-gradient(135deg, var(--card-bg), rgba(74, 144, 226, 0.1));
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .exchange-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+            border-color: var(--accent);
+        }
+
+        .exchange-logo {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .exchange-name {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .register-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent));
+            color: var(--dark-bg);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .register-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(247, 147, 26, 0.5);
+        }
+
+        .requirements-box {
+            background: rgba(247, 147, 26, 0.1);
+            border: 2px solid var(--primary-color);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .requirements-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .requirement-item {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            color: var(--text-primary);
+        }
+
+        .requirement-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--accent);
+        }
+
+        .warning-box {
+            background: rgba(255, 87, 87, 0.1);
+            border: 2px solid #ff5757;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box h4 {
+            color: #ff5757;
+            margin-bottom: 0.5rem;
+        }
+
+        .warning-box p {
+            color: var(--text-secondary);
+        }
+
+        .highlight-text {
+            color: var(--accent);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航列 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🪙 CryptoNest</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">首頁</a></li>
+                <li><a href="../index.html#articles">文章</a></li>
+                <li><a href="#about">關於我們</a></li>
+                <li><a href="#contact">聯絡我們</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 文章標題 -->
+    <section class="article-header">
+        <div class="container">
+            <a href="../index.html" class="back-button">← 返回首頁</a>
+            <h1 class="article-title">新手交易指南 - 加入A8A9會員群</h1>
+            <div class="article-meta">
+                <span>📅 發布日期：2026年1月19日</span> | 
+                <span>👤 作者：CryptoNest 團隊</span> | 
+                <span>⏱️ 閱讀時間：5分鐘</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文章內容 -->
+    <section class="container">
+        <div class="article-body">
+            <h2>🎉 歡迎來到 CryptoNest</h2>
+            <p>
+                CryptoNest 是一個專業的加密貨幣社群，致力於為會員提供最優質的交易策略、市場分析和學習資源。
+                我們的 A8A9 會員群集結了經驗豐富的交易員和市場分析師，為你的加密貨幣投資之路保駕護航。
+            </p>
+
+            <!-- A8A9會員群福利 -->
+            <div class="membership-section">
+                <h2 class="membership-title">🛳️ A8A9 會員群專屬福利</h2>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-number">1️⃣</div>
+                        <div class="benefit-title">個人投資筆記專區</div>
+                        <div class="benefit-description">
+                            資深交易員的實戰筆記分享，學習真實的投資思維與決策過程
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-number">2️⃣</div>
+                        <div class="benefit-title">主流幣合約策略分享</div>
+                        <div class="benefit-description">
+                            BTC、ETH 等主流幣種的合約交易策略，把握市場主要趨勢
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-number">3️⃣</div>
+                        <div class="benefit-title">山寨幣合約策略分享</div>
+                        <div class="benefit-description">
+                            挖掘潛力幣種，分享高收益山寨幣合約交易機會
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-number">4️⃣</div>
+                        <div class="benefit-title">提供推薦現貨佈局</div>
+                        <div class="benefit-description">
+                            專業團隊精選的現貨投資標的，建立穩健的投資組合
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-number">5️⃣</div>
+                        <div class="benefit-title">機器人爆量訊號 & 全網新聞偵測</div>
+                        <div class="benefit-description">
+                            AI 機器人即時監控市場異動，第一時間掌握重要資訊
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-number">6️⃣</div>
+                        <div class="benefit-title">市場敘事、數據秘笈</div>
+                        <div class="benefit-description">
+                            深度解析市場敘事邏輯，運用數據驅動投資決策
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-number">7️⃣</div>
+                        <div class="benefit-title">頂級篩幣技術</div>
+                        <div class="benefit-description">
+                            學習專業的幣種篩選方法，提高投資成功率
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 加入方式 -->
+            <h2>🚀 如何加入 A8A9 會員群？</h2>
+            
+            <div class="requirements-box">
+                <h3>📋 入會要求</h3>
+                <div class="requirement-item">
+                    <span class="requirement-icon">▶️</span>
+                    <span>使用以下推薦連結註冊帳號並入金 <span class="highlight-text">300 USDT</span></span>
+                </div>
+                <div class="requirement-item">
+                    <span class="requirement-icon">▶️</span>
+                    <span>完成註冊後，提供您的 <span class="highlight-text">UID</span> 給我們</span>
+                </div>
+                <div class="requirement-item">
+                    <span class="requirement-icon">▶️</span>
+                    <span>每月交易量需達到 <span class="highlight-text">5萬 USDT</span> 以上</span>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ 重要提醒</h4>
+                <p>每個月交易量不足 5 萬 USDT 將取消會員資格。請確保您有足夠的交易活動以維持會員身份。</p>
+            </div>
+
+            <!-- 交易所註冊連結 -->
+            <h2>💼 推薦交易所註冊</h2>
+            <p>選擇以下任一交易所註冊，開始您的交易之旅：</p>
+
+            <div class="exchange-links">
+                <div class="exchange-card">
+                    <div class="exchange-logo">🔷</div>
+                    <h3 class="exchange-name">BingX</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        主流交易所，支援合約與現貨交易
+                    </p>
+                    <a href="https://bingx.com/invite/0NPDHD" target="_blank" class="register-btn">
+                        立即註冊 BingX
+                    </a>
+                </div>
+
+                <div class="exchange-card">
+                    <div class="exchange-logo">🔶</div>
+                    <h3 class="exchange-name">MEXC</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        豐富的幣種選擇，適合山寨幣交易
+                    </p>
+                    <a href="https://www.mexc.com/zh-TW/acquisition/custom-sign-up?shareCode=mexc-3LTBj" target="_blank" class="register-btn">
+                        立即註冊 MEXC
+                    </a>
+                </div>
+
+                <div class="exchange-card">
+                    <div class="exchange-logo">🔸</div>
+                    <h3 class="exchange-name">CoinW</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        多功能交易平台，優質用戶體驗
+                    </p>
+                    <a href="https://www.coinw.com/zh_TW/register?r=4006389" target="_blank" class="register-btn">
+                        立即註冊 CoinW
+                    </a>
+                </div>
+            </div>
+
+            <h2>📞 聯絡我們</h2>
+            <p>
+                完成註冊後，請私訊 <span class="highlight-text">天香</span> 並提供您的 UID，我們將為您開通 A8A9 會員身份組權限。
+                加入後即可查看所有社群珍藏資源 💠
+            </p>
+
+            <p style="margin-top: 2rem; padding: 1.5rem; background: rgba(0, 212, 255, 0.1); border-radius: 10px; border-left: 4px solid var(--accent);">
+                💡 <strong>溫馨提示：</strong>公開資源請查看「新手組合包」，獲取免費的學習資料和交易指南！
+            </p>
+        </div>
+    </section>
+
+    <!-- 頁腳 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CryptoNest</h3>
+                    <p>您的加密貨幣學習與交流平台</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速連結</h4>
+                    <ul>
+                        <li><a href="../index.html#articles">文章</a></li>
+                        <li><a href="beginner-bundle.html">新手組合包</a></li>
+                        <li><a href="#contact">聯絡我們</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>社群媒體</h4>
+                    <ul>
+                        <li><a href="https://line.me/ti/g2/K870w-_UF2c28CcFeHMLGzsDxNX6m_kCgRy5Fg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">Line</a></li>
+                        <!-- <li><a href="#">Discord</a></li>
+                        <li><a href="#">Telegram</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CryptoNest. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

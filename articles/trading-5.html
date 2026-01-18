@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基礎形態學 - CryptoNest</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .article-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .image-container { position: relative; overflow: hidden; border-radius: 10px; cursor: pointer; border: 2px solid rgba(0, 212, 255, 0.2); transition: all 0.3s ease; }
+        .image-container:hover { border-color: var(--accent); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3); transform: translateY(-5px); }
+        .image-container img { width: 100%; height: auto; display: block; transition: transform 0.3s ease; }
+        .image-container:hover img { transform: scale(1.05); }
+        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); z-index: 9999; justify-content: center; align-items: center; }
+        .lightbox.active { display: flex; }
+        .lightbox-content { position: relative; max-width: 90%; max-height: 90%; }
+        .lightbox-content img { max-width: 100%; max-height: 90vh; object-fit: contain; }
+        .lightbox-close, .lightbox-nav { position: absolute; font-size: 2rem; color: white; cursor: pointer; background: var(--primary-color); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+        .lightbox-close { top: -60px; right: 0; }
+        .lightbox-close:hover, .lightbox-nav:hover { background: var(--accent); transform: scale(1.1); }
+        .lightbox-nav { top: 50%; transform: translateY(-50%); }
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"><h1>🪙 CryptoNest</h1></div>
+            <ul class="nav-links">
+                <li><a href="../index.html">首頁</a></li>
+                <li><a href="../index.html#articles">文章</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="article-header">
+        <div class="container">
+            <a href="../index.html" class="back-button">← 返回首頁</a>
+            <h1 class="article-title">基礎形態學</h1>
+            <div class="article-meta">
+                <span>📅 新手交易系列 #5</span> | <span>👤 CryptoNest 團隊</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="article-body">
+            <h2>📊 基礎形態學</h2>
+            <p>形態學是技術分析中的進階課題，透過識別價格圖表上的特定形態，可以預測未來價格走向。本篇將介紹常見的價格形態，包括頭肩頂、雙頂雙底、三角形等經典形態，以及如何運用這些形態進行交易決策。</p>
+            
+            <p style="background: rgba(0, 212, 255, 0.1); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--accent); margin: 2rem 0;">
+                💡 <strong>提示：</strong>點擊任一圖片可放大查看詳細內容，使用左右箭頭或鍵盤方向鍵瀏覽所有圖片
+            </p>
+
+            <div class="article-images">
+                <div class="image-container" onclick="openLightbox(0)">
+                    <img src="../新手交易/5/1.jpg" alt="基礎形態學 1" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(1)">
+                    <img src="../新手交易/5/2.jpg" alt="基礎形態學 2" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(2)">
+                    <img src="../新手交易/5/3.jpg" alt="基礎形態學 3" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(3)">
+                    <img src="../新手交易/5/4.jpg" alt="基礎形態學 4" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(4)">
+                    <img src="../新手交易/5/5.jpg" alt="基礎形態學 5" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(5)">
+                    <img src="../新手交易/5/6.jpg" alt="基礎形態學 6" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(6)">
+                    <img src="../新手交易/5/7.jpg" alt="基礎形態學 7" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(7)">
+                    <img src="../新手交易/5/8.jpg" alt="基礎形態學 8" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(8)">
+                    <img src="../新手交易/5/9.jpg" alt="基礎形態學 9" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(9)">
+                    <img src="../新手交易/5/10.jpg" alt="基礎形態學 10" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(10)">
+                    <img src="../新手交易/5/11.jpg" alt="基礎形態學 11" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(11)">
+                    <img src="../新手交易/5/12.jpg" alt="基礎形態學 12" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(12)">
+                    <img src="../新手交易/5/13.jpg" alt="基礎形態學 13" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(13)">
+                    <img src="../新手交易/5/14.jpg" alt="基礎形態學 14" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(14)">
+                    <img src="../新手交易/5/15.jpg" alt="基礎形態學 15" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(15)">
+                    <img src="../新手交易/5/16.jpg" alt="基礎形態學 16" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(16)">
+                    <img src="../新手交易/5/17.jpg" alt="基礎形態學 17" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(17)">
+                    <img src="../新手交易/5/18.jpg" alt="基礎形態學 18" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(18)">
+                    <img src="../新手交易/5/19.jpg" alt="基礎形態學 19" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(19)">
+                    <img src="../新手交易/5/20.jpg" alt="基礎形態學 20" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CryptoNest</h3>
+                    <p>您的加密貨幣學習與交流平台</p>
+                </div>
+                <div class="footer-section">
+                    <h4>新手交易系列</h4>
+                    <ul>
+                        <li><a href="trading-1.html">#1 數據解說</a></li>
+                        <li><a href="trading-2.html">#2 K棒基礎</a></li>
+                        <li><a href="trading-3.html">#3 支撐與壓力</a></li>
+                        <li><a href="trading-4.html">#4 趨勢線</a></li>
+                        <li><a href="trading-6.html">#6 基礎SMC教學</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CryptoNest. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox(event)">×</span>
+            <span class="lightbox-prev lightbox-nav" onclick="changeImage(-1, event)">‹</span>
+            <img id="lightbox-img" src="" alt="">
+            <span class="lightbox-next lightbox-nav" onclick="changeImage(1, event)">›</span>
+        </div>
+    </div>
+
+    <script>
+        const images = ['../新手交易/5/1.jpg','../新手交易/5/2.jpg','../新手交易/5/3.jpg','../新手交易/5/4.jpg','../新手交易/5/5.jpg','../新手交易/5/6.jpg','../新手交易/5/7.jpg','../新手交易/5/8.jpg','../新手交易/5/9.jpg','../新手交易/5/10.jpg','../新手交易/5/11.jpg','../新手交易/5/12.jpg','../新手交易/5/13.jpg','../新手交易/5/14.jpg','../新手交易/5/15.jpg','../新手交易/5/16.jpg','../新手交易/5/17.jpg','../新手交易/5/18.jpg','../新手交易/5/19.jpg','../新手交易/5/20.jpg'];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox-img').src = images[index];
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+                document.getElementById('lightbox').classList.remove('active');
+                document.body.style.overflow = 'auto';
+                event.stopPropagation();
+            }
+        }
+
+        function changeImage(direction, event) {
+            event.stopPropagation();
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            document.getElementById('lightbox-img').src = images[currentIndex];
+        }
+
+        document.addEventListener('keydown', function(event) {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox.classList.contains('active')) {
+                if (event.key === 'Escape') {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                } else if (event.key === 'ArrowLeft') {
+                    changeImage(-1, event);
+                } else if (event.key === 'ArrowRight') {
+                    changeImage(1, event);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合約操作教學 - CryptoNest</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .article-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .image-container:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            transform: translateY(-5px);
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            background: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .step-list {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        .step-list ol {
+            color: var(--text-secondary);
+            line-height: 2;
+        }
+        .step-list li {
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🪙 CryptoNest</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">首頁</a></li>
+                <li><a href="../index.html#articles">文章</a></li>
+                <li><a href="#about">關於我們</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="article-header">
+        <div class="container">
+            <a href="../index.html" class="back-button">← 返回首頁</a>
+            <h1 class="article-title">第四篇：合約操作</h1>
+            <div class="article-meta">
+                <span>📅 新手組合包系列</span> | 
+                <span>👤 CryptoNest 團隊</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="article-body">
+            <h2>📚 合約交易完整教學</h2>
+            <p>
+                本篇將詳細說明如何進行合約交易操作，從資金劃轉到倉位管理，一步步帶你完成第一筆合約交易。
+            </p>
+            
+            <div class="step-list">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">📝 操作步驟</h3>
+                <ol>
+                    <li><strong>資金劃轉：</strong>將 U 劃轉至合約帳戶（也可按可用餘額的加號劃轉）</li>
+                    <li><strong>選擇幣種：</strong>選擇幣種，然後將倉位模式改為逐倉</li>
+                    <li><strong>設置槓桿：</strong>根據止損比例設置槓桿，將槓桿旁單向改為雙向（如圖）</li>
+                    <li><strong>選擇委託類型：</strong>
+                        <ul style="margin-top: 0.5rem;">
+                            <li>如果要以當前市價入場則將委託類型改為市價委託</li>
+                            <li>如果是想掛單則將委託類型改為限價委託，並打上想掛的價格及數量</li>
+                        </ul>
+                    </li>
+                    <li><strong>設置止損止盈：</strong>在止盈/止損旁高階中設置止損價格並將數量設置滿，同時設置止盈，並根據各個 TP 位設定價格及數量</li>
+                    <li><strong>開倉與平倉：</strong>設置完後點下開空或開多倉位便會出現在下方，如果想手動結算倉位可按平倉</li>
+                </ol>
+            </div>
+
+            <div style="background: rgba(255, 87, 87, 0.1); border: 2px solid #ff5757; border-radius: 10px; padding: 1.5rem; margin: 2rem 0;">
+                <h3 style="color: #ff5757; margin-bottom: 1rem;">⚠️ 風險警告</h3>
+                <p style="color: var(--text-secondary);">
+                    合約交易具有高風險性，請務必謹慎操作。建議新手先從小額開始練習，熟悉操作流程後再逐步增加倉位。
+                    永遠不要投入超過你能承受損失的資金。
+                </p>
+            </div>
+
+            <div class="article-images">
+                <div class="image-container" onclick="openLightbox(this)">
+                    <img src="../新手組合包/4/image.png" alt="合約操作">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CryptoNest</h3>
+                    <p>您的加密貨幣學習與交流平台</p>
+                </div>
+                <div class="footer-section">
+                    <h4>系列文章</h4>
+                    <ul>
+                        <li><a href="bundle-1.html">第一篇：區塊鏈概述</a></li>
+                        <li><a href="bundle-2.html">第二篇：交易的本質</a></li>
+                        <li><a href="bundle-3.html">第三篇：如何入金</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CryptoNest. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox(event)">×</span>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox(event) {
+            if (event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+                document.getElementById('lightbox').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.getElementById('lightbox').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>

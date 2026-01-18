@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加密貨幣與區塊鏈概述 - CryptoNest</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .article-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .image-container:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            background: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🪙 CryptoNest</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">首頁</a></li>
+                <li><a href="../index.html#articles">文章</a></li>
+                <li><a href="#about">關於我們</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="article-header">
+        <div class="container">
+            <a href="../index.html" class="back-button">← 返回首頁</a>
+            <h1 class="article-title">第一篇：加密貨幣與區塊鏈概述</h1>
+            <div class="article-meta">
+                <span>📅 新手組合包系列</span> | 
+                <span>👤 CryptoNest 團隊</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="article-body">
+            <h2>📚 內容簡介</h2>
+            <p>
+                這篇面向不知道加密貨幣跟區塊鏈在幹嘛及還不知道加密貨幣潛力的新手老手。結尾給了各位如果要踏入幣圈應該有什麼要注意的。
+            </p>
+            
+            <p style="background: rgba(0, 212, 255, 0.1); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--accent);">
+                💡 <strong>下一篇我們會講：交易</strong><br>
+                新手務必看完，看完私訊 IG 領取手續費 9 折傳送門
+            </p>
+
+            <div class="article-images">
+                <div class="image-container" onclick="openLightbox(this)">
+                    <img src="../新手組合包/1/image.png" alt="加密貨幣與區塊鏈概述">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CryptoNest</h3>
+                    <p>您的加密貨幣學習與交流平台</p>
+                </div>
+                <div class="footer-section">
+                    <h4>系列文章</h4>
+                    <ul>
+                        <li><a href="bundle-2.html">第二篇：交易的本質</a></li>
+                        <li><a href="bundle-3.html">第三篇：如何入金</a></li>
+                        <li><a href="bundle-4.html">第四篇：合約操作</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CryptoNest. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox(event)">×</span>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+                document.getElementById('lightbox').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.getElementById('lightbox').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>

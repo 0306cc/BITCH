@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何入金 - CryptoNest</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .article-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .image-container:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            transform: translateY(-5px);
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            background: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🪙 CryptoNest</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">首頁</a></li>
+                <li><a href="../index.html#articles">文章</a></li>
+                <li><a href="#about">關於我們</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="article-header">
+        <div class="container">
+            <a href="../index.html" class="back-button">← 返回首頁</a>
+            <h1 class="article-title">第三篇：如何入金</h1>
+            <div class="article-meta">
+                <span>📅 新手組合包系列</span> | 
+                <span>👤 CryptoNest 團隊</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="article-body">
+            <h2>📚 內容簡介</h2>
+            <p>
+                這篇實操如何將法幣轉換成加密貨幣，步驟看起來多了點但其實沒有很複雜，由於 BingX 在操作上比較方便以及標的較多因此會推薦各位使用 BingX。
+            </p>
+            
+            <div style="background: rgba(0, 212, 255, 0.1); padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--accent); margin: 2rem 0;">
+                <h3 style="color: var(--accent); margin-bottom: 1rem;">⚠️ 安全提醒</h3>
+                <p>
+                    BingX 擁有明確的資產儲備為各個用戶的資產做保障，每半個月會做一次報告，但即使如此我們也不能忽視風險，
+                    沒有一間交易所是 100% 安全的，減少風險的方法可以考慮把資產放入冷錢包或者將資產分散到多個交易所。
+                </p>
+            </div>
+
+            <p>
+                在了解第三篇後，各位可以開始去買自己中意的標的了～有操作上不會的問題都還是可以找頭像旁有皇冠的那幾個 SB 問～
+            </p>
+
+            <div style="background: rgba(247, 147, 26, 0.1); padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--primary-color); margin: 2rem 0;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">🏦 台灣交易所 - 幣托 BitoPro</h3>
+                <p>
+                    這邊提供另一個台灣交易所幣托的入金教學：<br>
+                    BitoPro 是全台第一家安全、穩定且易於使用的加密貨幣交易所，為您提供台幣的入金服務，還可在超商購買或點數兌換加密貨幣。
+                </p>
+                <ul style="margin-top: 1rem; color: var(--text-secondary);">
+                    <li>✅ <a href="https://reurl.cc/L5lqA7" target="_blank" style="color: var(--accent);">BitoPro 註冊連結</a></li>
+                    <li>❓ <a href="https://reurl.cc/74dmpb" target="_blank" style="color: var(--accent);">註冊 & 驗證 & 綁定教學</a></li>
+                    <li>❓ <a href="https://reurl.cc/b3YAEM" target="_blank" style="color: var(--accent);">提幣到交易所教學</a></li>
+                </ul>
+                <p style="margin-top: 1rem;">
+                    <strong>❓ 幣托使用流程：</strong><br>
+                    綁定銀行帳號轉入台幣 ➡️ 兌換成 USDT ➡️ 提領
+                </p>
+            </div>
+
+            <p style="background: rgba(0, 212, 255, 0.1); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--accent);">
+                💡 <strong>下一期我們會講：合約交易</strong>
+            </p>
+
+            <div class="article-images">
+                <div class="image-container" onclick="openLightbox(0)">
+                    <img src="../新手組合包/3/image0.png" alt="如何入金 1" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(1)">
+                    <img src="../新手組合包/3/image1.png" alt="如何入金 2" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(2)">
+                    <img src="../新手組合包/3/image2.png" alt="如何入金 3" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(3)">
+                    <img src="../新手組合包/3/image3.png" alt="如何入金 4" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(4)">
+                    <img src="../新手組合包/3/image4.png" alt="如何入金 5" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(5)">
+                    <img src="../新手組合包/3/image5.png" alt="如何入金 6" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(6)">
+                    <img src="../新手組合包/3/image6.png" alt="如何入金 7" loading="lazy">
+                </div>
+                <div class="image-container" onclick="openLightbox(7)">
+                    <img src="../新手組合包/3/image7.png" alt="如何入金 8" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CryptoNest</h3>
+                    <p>您的加密貨幣學習與交流平台</p>
+                </div>
+                <div class="footer-section">
+                    <h4>系列文章</h4>
+                    <ul>
+                        <li><a href="bundle-1.html">第一篇：區塊鏈概述</a></li>
+                        <li><a href="bundle-2.html">第二篇：交易的本質</a></li>
+                        <li><a href="bundle-4.html">第四篇：合約操作</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CryptoNest. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox(event)">×</span>
+            <span class="lightbox-prev lightbox-nav" onclick="changeImage(-1, event)">‹</span>
+            <img id="lightbox-img" src="" alt="">
+            <span class="lightbox-next lightbox-nav" onclick="changeImage(1, event)">›</span>
+        </div>
+    </div>
+
+    <script>
+        const images = ['../新手組合包/3/image0.png','../新手組合包/3/image1.png','../新手組合包/3/image2.png','../新手組合包/3/image3.png','../新手組合包/3/image4.png','../新手組合包/3/image5.png','../新手組合包/3/image6.png','../新手組合包/3/image7.png'];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox-img').src = images[currentIndex];
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function changeImage(direction, event) {
+            event.stopPropagation();
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            document.getElementById('lightbox-img').src = images[currentIndex];
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+                document.getElementById('lightbox').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.getElementById('lightbox').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            } else if (event.key === 'ArrowLeft') {
+                changeImage(-1, event);
+            } else if (event.key === 'ArrowRight') {
+                changeImage(1, event);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>比特幣投資指南 - CryptoNest</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .article-header {
+            text-align: center;
+            padding: 4rem 0 2rem;
+        }
+
+        .article-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent), var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-meta {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-body {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 15px;
+            margin-bottom: 3rem;
+        }
+
+        .article-body h2 {
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+            font-size: 2rem;
+        }
+
+        .article-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .image-container:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(26, 26, 46, 0.95), transparent);
+            color: var(--text-primary);
+            padding: 1rem;
+            font-size: 0.9rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover .image-caption {
+            transform: translateY(0);
+        }
+
+        /* 圖片燈箱 */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            animation: zoomIn 0.3s ease;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            font-size: 2rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            background: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: var(--accent);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            background: rgba(247, 147, 26, 0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            background: var(--primary-color);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); }
+            to { transform: scale(1); }
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 2rem 0;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent));
+            color: var(--dark-bg);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 5px 20px rgba(247, 147, 26, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+
+            .article-images {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-nav {
+                font-size: 2rem;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航列 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🪙 CryptoNest</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="index.html#articles">文章</a></li>
+                <li><a href="#about">關於我們</a></li>
+                <li><a href="#contact">聯絡我們</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 文章標題 -->
+    <section class="article-header">
+        <div class="container">
+            <a href="index.html" class="back-button">← 返回首頁</a>
+            <h1 class="article-title">2026年比特幣投資指南</h1>
+            <div class="article-meta">
+                <span>📅 發布日期：2026年1月19日</span> | 
+                <span>👤 作者：CryptoNest 編輯團隊</span> | 
+                <span>⏱️ 閱讀時間：8分鐘</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文章內容 -->
+    <section class="container">
+        <div class="article-body">
+            <h2>📊 比特幣市場現況</h2>
+            <p>
+                2026年，比特幣作為全球最大的加密貨幣，持續吸引著投資者的目光。經過多年的發展，比特幣已經從一個實驗性的數位貨幣，
+                成長為被廣泛認可的價值儲存工具。本文將深入探討當前的市場趨勢、投資策略，以及未來的發展前景。
+            </p>
+
+            <div class="article-images">
+                <div class="image-container" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=800&h=600&fit=crop" alt="比特幣實體幣">
+                    <div class="image-caption">比特幣已成為數位黃金的代名詞</div>
+                </div>
+                <div class="image-container" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&h=600&fit=crop" alt="加密貨幣交易圖表">
+                    <div class="image-caption">技術分析是投資決策的重要工具</div>
+                </div>
+            </div>
+
+            <h2>💡 投資策略建議</h2>
+            <p>
+                對於想要投資比特幣的新手來說，最重要的是建立正確的投資心態和策略。定期定額投資（DCA）被證明是一種有效的長期投資方法，
+                能夠幫助投資者平滑市場波動帶來的風險。同時，切記不要投入超過您能承受損失的資金。
+            </p>
+
+            <div class="article-images">
+                <div class="image-container" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1640826514546-7d2fbda5b7b6?w=800&h=600&fit=crop" alt="投資分析">
+                    <div class="image-caption">多元化投資組合是風險管理的關鍵</div>
+                </div>
+                <div class="image-container" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?w=800&h=600&fit=crop" alt="數位錢包">
+                    <div class="image-caption">選擇安全的錢包保護您的資產</div>
+                </div>
+            </div>
+
+            <h2>🔒 安全性考量</h2>
+            <p>
+                在投資比特幣之前，了解如何安全地儲存和管理您的數位資產至關重要。硬體錢包提供了最高等級的安全性，
+                適合長期持有者。此外，啟用雙因素認證（2FA）和使用強密碼也是保護您的投資的基本措施。
+            </p>
+
+            <div class="article-images">
+                <div class="image-container" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1634704784915-aacf363b021f?w=800&h=600&fit=crop" alt="網路安全">
+                    <div class="image-caption">網路安全是保護數位資產的第一道防線</div>
+                </div>
+                <div class="image-container" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop" alt="區塊鏈技術">
+                    <div class="image-caption">區塊鏈技術確保交易的透明與安全</div>
+                </div>
+            </div>
+
+            <h2>🚀 未來展望</h2>
+            <p>
+                展望未來，比特幣的採用率持續增長，越來越多的機構投資者進入市場。隨著監管框架的逐步完善，
+                以及支付基礎設施的改善，比特幣有望在全球金融體系中扮演更重要的角色。然而，投資者仍需保持謹慎，
+                密切關注市場動態和監管變化。
+            </p>
+
+            <p>
+                記住，加密貨幣投資存在高風險，價格波動劇烈。在做出任何投資決策之前，請務必進行充分的研究，
+                或諮詢專業的財務顧問。CryptoNest 社群隨時歡迎您加入討論，與其他投資者交流心得和經驗。
+            </p>
+        </div>
+    </section>
+
+    <!-- 圖片燈箱 -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox(event)">×</span>
+            <span class="lightbox-prev lightbox-nav" onclick="changeImage(-1, event)">‹</span>
+            <img id="lightbox-img" src="" alt="">
+            <span class="lightbox-next lightbox-nav" onclick="changeImage(1, event)">›</span>
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- 頁腳 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CryptoNest</h3>
+                    <p>您的加密貨幣學習與交流平台</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速連結</h4>
+                    <ul>
+                        <li><a href="index.html#articles">文章</a></li>
+                        <li><a href="#about">關於我們</a></li>
+                        <li><a href="#contact">聯絡我們</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>社群媒體</h4>
+                    <ul>
+                        <li><a href="https://line.me/ti/g2/K870w-_UF2c28CcFeHMLGzsDxNX6m_kCgRy5Fg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">Line</a></li>
+                        <!-- <li><a href="#">Discord</a></li>
+                        <li><a href="#">Telegram</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CryptoNest. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

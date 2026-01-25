@@ -1,4 +1,4 @@
-# CryptoNest - 加密貨幣社群網站
+﻿# BITCH - 加密貨幣社群網站
 
 一個現代化的加密貨幣社群網站，使用 GitHub Pages 部署。
 
@@ -13,7 +13,7 @@
 ## 📁 檔案結構
 
 ```
-cryptoNest/
+BITCH/
 ├── index.html      # 主頁面
 ├── article.html    # 文章頁面
 ├── styles.css      # 樣式表
@@ -27,7 +27,7 @@ cryptoNest/
 
 1. 登入你的 GitHub 帳號
 2. 點擊右上角的 "+" 並選擇 "New repository"
-3. 為 Repository 命名（例如：cryptoNest）
+3. 為 Repository 命名（例如：BITCH）
 4. 選擇 "Public"
 5. 點擊 "Create repository"
 
@@ -43,10 +43,10 @@ git init
 git add .
 
 # 提交變更
-git commit -m "Initial commit - CryptoNest website"
+git commit -m "Initial commit - BITCH website"
 
 # 連結到你的 GitHub repository（替換成你的使用者名稱）
-git remote add origin https://github.com/你的使用者名稱/cryptoNest.git
+git remote add origin https://github.com/你的使用者名稱/BITCH.git
 
 # 推送到 GitHub
 git branch -M main
@@ -59,7 +59,7 @@ git push -u origin main
 2. 在左側選單找到 "Pages"
 3. 在 "Source" 下拉選單中選擇 "main" 分支
 4. 點擊 "Save"
-5. 等待幾分鐘後，你的網站就會在 `https://你的使用者名稱.github.io/cryptoNest/` 上線！
+5. 等待幾分鐘後，你的網站就會在 `https://你的使用者名稱.github.io/BITCH/` 上線！
 
 ## 🎯 使用方式
 
